@@ -1,0 +1,5 @@
+C:\Users\Zach\documents\visual studio 2015\Projects\Darts\Darts\bin\Debug\Darts.dll
+C:\Users\Zach\documents\visual studio 2015\Projects\Darts\Darts\bin\Debug\Darts.pdb
+C:\Users\Zach\documents\visual studio 2015\Projects\Darts\Darts\obj\Debug\Darts.csprojResolveAssemblyReference.cache
+C:\Users\Zach\documents\visual studio 2015\Projects\Darts\Darts\obj\Debug\Darts.dll
+C:\Users\Zach\documents\visual studio 2015\Projects\Darts\Darts\obj\Debug\Darts.pdb
