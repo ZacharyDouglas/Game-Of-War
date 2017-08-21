@@ -21,12 +21,12 @@ namespace WarCardGame
              * Also, it houses the condition at which to end the game.  Which is currently
              * after 5 rounds
              */
-            Deck dealerDeck = new Deck();
-            Player playerOne = new Player();
-            Player playerTwo = new Player();
-            Battle battleObj = new Battle(playerOne, playerTwo);
+            var dealerDeck = new Deck();
+            var playerOne = new Player();
+            var playerTwo = new Player();
+            var battleObj = new Battle(playerOne, playerTwo);
             dealerDeck.dealCards(playerOne, playerTwo);
-            int numberOfTurns = 0;
+            var numberOfTurns = 0;
             while(numberOfTurns < 5)
             {
                 displayFirstCardFlip(battleObj);
@@ -45,18 +45,18 @@ namespace WarCardGame
              * them on the bottom of his deck.
              */
 
-            Player winner = battleObj.compareCards();
-            if (winner == null)
+            var winnerPlayerObj = battleObj.compareCards();
+            if (winnerPlayerObj == null)
             {
-                winner = battleObj.handleDraw();
+                winnerPlayerObj = battleObj.handleDraw();
                 displayFourCardFlip(battleObj);
-                displayWinnerMessage(winner, battleObj);
-                battleObj.moveFiveCardsFromLosersDeckToWinnersDeck(winner);
+                displayWinnerMessage(winnerPlayerObj, battleObj);
+                battleObj.moveFiveCardsFromLosersDeckToWinnersDeck(winnerPlayerObj);
             }
             else
             {
-                battleObj.moveOneCardFromLosersDeckToWinnersDeck(winner);
-                displayWinnerMessage(winner, battleObj);
+                battleObj.moveOneCardFromLosersDeckToWinnersDeck(winnerPlayerObj);
+                displayWinnerMessage(winnerPlayerObj, battleObj);
             }
         }
         
@@ -91,12 +91,12 @@ namespace WarCardGame
             }
         }
 
-        protected void displayWinnerMessage(Player winner, Battle battleObj)
+        protected void displayWinnerMessage(Player winnerPlayerObj, Battle battleObj)
         {
             /* Displays the winner of the round */
 
-            if (winner == battleObj.playerOne) resultLabel.Text += "Player One Wins!</br>";
-            else if (winner == battleObj.playerTwo) resultLabel.Text += "Player Two Wins! </br>";
+            if (winnerPlayerObj == battleObj.playerOne) resultLabel.Text += "Player One Wins!</br>";
+            else if (winnerPlayerObj == battleObj.playerTwo) resultLabel.Text += "Player Two Wins! </br>";
         }
 
     }

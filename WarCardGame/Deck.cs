@@ -41,8 +41,8 @@ namespace WarCardGame
             const int PLAYER_ONE_TURN = 0;
             const int PLAYER_TWO_TURN = 1;
 
-            int whoseTurn = PLAYER_ONE_TURN;
-            int cardsLeftToDeal = NUM_OF_CARDS_IN_DECK;
+            var whoseTurn = PLAYER_ONE_TURN;
+            var cardsLeftToDeal = NUM_OF_CARDS_IN_DECK;
 
             while(DeckOfCards.Count != 0)
             {
@@ -64,7 +64,7 @@ namespace WarCardGame
         {
             /* Handles the removal of a random card from the dealer deck to the current player's deck*/
 
-            int randomCardFromDeckIndex = _random.Next(0, cardsLeftInDeck);
+            var randomCardFromDeckIndex = _random.Next(0, cardsLeftInDeck);
             player.playersDeck.Add(DeckOfCards.ElementAt(randomCardFromDeckIndex));
             DeckOfCards.Remove(DeckOfCards.ElementAt(randomCardFromDeckIndex));
         }
